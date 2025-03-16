@@ -29,10 +29,14 @@ git init
 ## **Step 4: Create a GitHub Repository Using GitHub CLI**
 Run the following command:
 ```sh
-gh repo create <repo-name> --private --source=. --remote=origin
+gh repo create <repo-name> --public --source=. --remote=origin
+```
+Example:
+```sh
+gh repo create myNewApp --public --source=. --remote=origin
 ```
 Replace `<repo-name>` with your desired repository name.
-- To create a **public** repository, remove `--private`.
+- To create a **private** repository, remove `--public`.
 
 If the repository is created but the remote is not added, you will see an error like:
 ```
@@ -55,7 +59,7 @@ If the remote was not added, follow these steps:
    ```
    Example:
    ```sh
-   git remote add origin https://github.com/Manikanta1239/Job-Portal-Django.git
+   git remote add origin https://github.com/Manikanta1239/Python.git
    ```
 3. **Verify the remote:**
    ```sh
@@ -89,7 +93,7 @@ https://github.com/<your-username>/<repo-name>
 ```
 Example:
 ```
-https://github.com/Manikanta1239/Job-Portal-Django
+https://github.com/Manikanta1239/Python
 ```
 
 Your code should now be uploaded! 🎉
