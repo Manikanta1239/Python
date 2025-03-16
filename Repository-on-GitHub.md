@@ -13,19 +13,19 @@ Before proceeding, ensure you have the following installed:
    gh auth login
    ```
 3. Follow the authentication steps and authorize VS Code to access GitHub.
-
+---
 ## **Step 2: Navigate to Your Project Folder**
 Use the terminal to move to your project directory:
 ```sh
 cd path/to/your/project
 ```
-
+---
 ## **Step 3: Initialize Git in the Project**
 Run the following command to initialize Git in the project folder:
 ```sh
 git init
 ```
-
+---
 ## **Step 4: Create a GitHub Repository Using GitHub CLI**
 Run the following command:
 ```sh
@@ -35,14 +35,15 @@ Example:
 ```sh
 gh repo create myNewApp --public --source=. --remote=origin
 ```
+---
 Replace `<repo-name>` with your desired repository name.
-- To create a **private** repository, remove `--public`.
+- To create a **private** repository, remove `--public` and replace it with `--private`.
 
 If the repository is created but the remote is not added, you will see an error like:
 ```
 X Unable to add remote "origin"
 ```
-
+---
 ## **Step 5: Manually Add Remote (If Necessary)**
 If the remote was not added, follow these steps:
 1. **Check existing remotes:**
@@ -70,7 +71,7 @@ If the remote was not added, follow these steps:
    origin  https://github.com/Manikanta1239/Job-Portal-Django.git (fetch)
    origin  https://github.com/Manikanta1239/Job-Portal-Django.git (push)
    ```
-
+---
 ## **Step 6: Push Your Code to GitHub**
 1. **Add files to Git:**
    ```sh
@@ -85,7 +86,7 @@ If the remote was not added, follow these steps:
    git push -u origin main
    ```
    *(If your branch is not named `main`, replace it with `master` or the correct branch name.)*
-
+---
 ## **Step 7: Confirm on GitHub**
 Visit your GitHub repository at:
 ```
