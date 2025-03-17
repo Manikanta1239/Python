@@ -13,39 +13,55 @@ Before proceeding, ensure you have the following installed:
    gh auth login
    ```
 3. Follow the authentication steps and authorize VS Code to access GitHub.
+
+💡 *Example Output:*
+```
+? What account do you want to log into? GitHub.com
+? How would you like to authenticate? Login with a web browser
+```
+
 ---
 ## **Step 2: Navigate to Your Project Folder**
 Use the terminal to move to your project directory:
 ```sh
 cd path/to/your/project
 ```
+
+💡 *Example:*
+```sh
+cd C:/Users/Mani/Documents/MyProject
+```
+
 ---
 ## **Step 3: Initialize Git in the Project**
 Run the following command to initialize Git in the project folder:
 ```sh
 git init
 ```
+💡 *This creates a hidden `.git` folder that tracks changes in your project.*
+
 ---
 ## **Step 4: Create a GitHub Repository Using GitHub CLI**
 Run the following command:
 ```sh
 gh repo create <repo-name> --public --source=. --remote=origin
 ```
-Example:
+💡 *Example:*
 ```sh
 gh repo create myNewApp --public --source=. --remote=origin
 ```
----
 Replace `<repo-name>` with your desired repository name.
-- To create a **private** repository, remove `--public` and replace it with `--private`.
+- To create a **private** repository, use `--private` instead of `--public`.
 
-If the repository is created but the remote is not added, you will see an error like:
+📌 *If you see an error like below, proceed to the next step to fix it:*
 ```
 X Unable to add remote "origin"
 ```
+
 ---
 ## **Step 5: Manually Add Remote (If Necessary)**
 If the remote was not added, follow these steps:
+
 1. **Check existing remotes:**
    ```sh
    git remote -v
@@ -54,23 +70,26 @@ If the remote was not added, follow these steps:
      ```sh
      git remote remove origin
      ```
+
 2. **Add the correct remote manually:**
    ```sh
    git remote add origin https://github.com/<your-username>/<repo-name>.git
    ```
-   Example:
+   💡 *Example:*
    ```sh
    git remote add origin https://github.com/Manikanta1239/Python.git
    ```
+
 3. **Verify the remote:**
    ```sh
    git remote -v
    ```
-   You should see output like this:
+   Expected output:
    ```
-   origin  https://github.com/Manikanta1239/Job-Portal-Django.git (fetch)
-   origin  https://github.com/Manikanta1239/Job-Portal-Django.git (push)
+   origin  https://github.com/Manikanta1239/Python.git (fetch)
+   origin  https://github.com/Manikanta1239/Python.git (push)
    ```
+
 ---
 ## **Step 6: Push Your Code to GitHub**
 1. **Add files to Git:**
@@ -86,19 +105,30 @@ If the remote was not added, follow these steps:
    git push -u origin main
    ```
    *(If your branch is not named `main`, replace it with `master` or the correct branch name.)*
+
+💡 *Example Output:*
+```
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 500 bytes | 500.00 KiB/s, done.
+To https://github.com/Manikanta1239/Python.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+```
+
 ---
 ## **Step 7: Confirm on GitHub**
 Visit your GitHub repository at:
 ```
 https://github.com/<your-username>/<repo-name>
 ```
-Example:
+💡 *Example:*
 ```
 https://github.com/Manikanta1239/Python
 ```
-
 Your code should now be uploaded! 🎉
 
+---
 ## **Alternative: Using VS Code GUI (Without Terminal)**
 1. Open VS Code and navigate to your project.
 2. Open the **Source Control** panel (`Ctrl + Shift + G`).
@@ -115,6 +145,14 @@ Your code should now be uploaded! 🎉
 
 ### 2. **Permission denied (publickey)**
 - Ensure you have set up SSH keys for GitHub: [GitHub SSH Guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys).
+- Check if SSH authentication works by running:
+  ```sh
+  ssh -T git@github.com
+  ```
+  Expected output:
+  ```
+  Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access.
+  ```
 
 ### 3. **Remote 'origin' already exists**
 - Remove the existing remote:
@@ -125,7 +163,9 @@ Your code should now be uploaded! 🎉
 
 ---
 ## **Conclusion**
-You have successfully pushed your project to GitHub without manually creating the repository on the GitHub website. 🚀 If you have any issues, double-check the steps or run `git status` to debug.
+You have successfully pushed your project to GitHub without manually creating the repository on the GitHub website. 🚀
+
+If you have any issues, double-check the steps or run `git status` to debug.
 
 Happy coding! 😃
 
