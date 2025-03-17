@@ -117,7 +117,28 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
 
 ---
-## **Step 7: Confirm on GitHub**
+## **Step 7: Change Branch from `master` to `main` (If Needed)**
+If your default branch is `master` but you want to change it to `main`, follow these steps:
+
+1. Rename the local branch:
+   ```sh
+   git branch -m master main
+   ```
+2. Push the renamed branch to GitHub:
+   ```sh
+   git push -u origin main
+   ```
+3. Change the default branch on GitHub (via the website):
+   - Go to your repository on GitHub.
+   - Navigate to **Settings > Branches**.
+   - Change the default branch from `master` to `main`.
+4. Delete the old `master` branch remotely:
+   ```sh
+   git push origin --delete master
+   ```
+
+---
+## **Step 8: Confirm on GitHub**
 Visit your GitHub repository at:
 ```
 https://github.com/<your-username>/<repo-name>
