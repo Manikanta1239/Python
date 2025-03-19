@@ -19,7 +19,7 @@ python -m venv <directory>
 
 📌 A common name is `venv`:
 ```bash
-python -m venv venv
+python -m venv venv  (or)  python -m venv myvenv
 ```
 This creates a `venv` folder with an isolated Python environment, including `pip` for package management.
 
