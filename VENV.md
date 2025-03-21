@@ -21,7 +21,7 @@ python -m venv <directory>
 ```bash
 python -m venv venv  (or)  python -m venv myvenv
 ```
-This creates a `venv` folder with an isolated Python environment, including `pip` for package management.
+This command creates a new directory containing an isolated Python environment with its own Python interpreter and `pip` for package management.
 
 ---
 ## 🚀 Activating the Virtual Environment
@@ -42,27 +42,27 @@ venv\Scripts\Activate.ps1
 source venv/bin/activate
 ```
 
-💡 **Once activated, you'll see `(venv)` in your terminal prompt.**
+💡 **Once activated, your terminal prompt will change to indicate that you're working within the virtual environment.**
 
 ### 🔍 Checking Virtual Environment Activation
-To verify activation:
+To confirm that your virtual environment is active:
 ```bash
 which python  # macOS/Linux
 where python   # Windows
 ```
-The output should point to the Python binary inside `venv`.
+The output should point to the Python binary inside `venv` rather than the global system installation.
 
 ---
 ## ❌ Deactivating the Virtual Environment
-To exit the virtual environment, simply run:
+To exit the virtual environment and return to the global Python environment, run:
 ```bash
 deactivate
 ```
-Your terminal will return to the normal system environment.
+Your terminal prompt will revert to its normal state.
 
 ---
-## 💑 Deleting a Virtual Environment
-To remove a virtual environment:
+## 🗑️ Deleting a Virtual Environment
+To remove a virtual environment completely:
 
 🖥 **Windows:**
 ```bash
@@ -71,31 +71,35 @@ rmdir /s venv
 
 🐧 **Linux & macOS:**
 ```bash
-rm -r venv
+rm -rf venv
 ```
 
+This permanently deletes the virtual environment folder and all its contents.
+
 ---
-## 🛆 Managing Dependencies
+## 📦 Managing Dependencies
 ### 📌 Saving Installed Packages
-Generate a `requirements.txt` file listing all installed dependencies:
+To create a list of all installed dependencies:
 ```bash
 pip freeze > requirements.txt
 ```
+This generates a `requirements.txt` file, which can be used to reinstall the exact same dependencies in another environment.
 
 ### 📌 Installing Packages from a File
-To recreate the environment with the same dependencies:
+To install dependencies from `requirements.txt`:
 ```bash
 pip install -r requirements.txt
 ```
+This ensures that all necessary packages are installed in your virtual environment.
 
 ### 📌 Upgrading `pip`
-After activation, it’s a good practice to upgrade `pip`:
+After activating the virtual environment, it is recommended to update `pip`:
 ```bash
 pip install --upgrade pip
 ```
 
 ### ❌ Deleting `requirements.txt`
-If you no longer need the `requirements.txt` file:
+If you no longer need the `requirements.txt` file, you can delete it:
 ```bash
 rm requirements.txt  # Linux & macOS
 ```
@@ -108,16 +112,17 @@ To remove all installed dependencies listed in `requirements.txt`:
 ```bash
 pip uninstall -r requirements.txt -y
 ```
+This removes all listed packages, ensuring a clean environment.
 
 ---
 ## 🏆 Best Practices
 ### 🔒 Ignoring `venv` in Git
-Add this to `.gitignore` to avoid committing virtual environments:
+To avoid committing the virtual environment folder to Git, add the following to `.gitignore`:
 ```
 venv/
 ```
 
-### 🖥 Using venv in VS Code
+### 🖥 Using `venv` in VS Code
 1. Open the Command Palette (`Ctrl + Shift + P` / `Cmd + Shift + P`)
 2. Search for **"Python: Select Interpreter"**
 3. Choose the Python executable inside `venv`
