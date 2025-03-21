@@ -61,7 +61,7 @@ deactivate
 Your terminal will return to the normal system environment.
 
 ---
-## 🗑️ Deleting a Virtual Environment
+## 💑 Deleting a Virtual Environment
 To remove a virtual environment:
 
 🖥 **Windows:**
@@ -75,7 +75,7 @@ rm -r venv
 ```
 
 ---
-## 📦 Managing Dependencies
+## 🛆 Managing Dependencies
 ### 📌 Saving Installed Packages
 Generate a `requirements.txt` file listing all installed dependencies:
 ```bash
@@ -94,6 +94,21 @@ After activation, it’s a good practice to upgrade `pip`:
 pip install --upgrade pip
 ```
 
+### ❌ Deleting `requirements.txt`
+If you no longer need the `requirements.txt` file:
+```bash
+rm requirements.txt  # Linux & macOS
+```
+```bash
+del requirements.txt  # Windows
+```
+
+### 📌 Uninstalling All Packages from `requirements.txt`
+To remove all installed dependencies listed in `requirements.txt`:
+```bash
+pip uninstall -r requirements.txt -y
+```
+
 ---
 ## 🏆 Best Practices
 ### 🔒 Ignoring `venv` in Git
@@ -109,9 +124,9 @@ venv/
 
 ---
 ## ⚡ Alternative Virtual Environment Managers
-🔹 **Pipenv** → Automates virtual environments & dependency management.  
-🔹 **Poetry** → Modern dependency management with built-in venv support.  
-🔹 **Conda** → Great for managing both Python & non-Python dependencies.  
+👉 **Pipenv** → Automates virtual environments & dependency management.  
+👉 **Poetry** → Modern dependency management with built-in venv support.  
+👉 **Conda** → Great for managing both Python & non-Python dependencies.  
 
 ---
 By mastering virtual environments, you ensure cleaner projects, smoother collaboration, and better package management. 🚀 Happy coding!
