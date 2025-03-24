@@ -30,7 +30,7 @@ Before you start, ensure you have these installed:
 
 ---
 
-## 📁 **Step 2: Navigate to Your Project**
+## 💁 **Step 2: Navigate to Your Project**
 
 Move to your project directory:
 ```sh
@@ -100,6 +100,14 @@ If you see an error like `X Unable to add remote "origin"`:
    ```sh
    git add .
    ```
+   > 🚨 **Warning:** If you see a message like this:
+   > ```
+   > warning: in the working copy of 'file.ipynb', LF will be replaced by CRLF the next time Git touches it
+   > ```
+   > It's due to line-ending differences. To fix, configure Git with:
+   > ```sh
+   > git config --global core.autocrlf false
+   > ```
 2. Commit changes:
    ```sh
    git commit -m "Initial commit"
