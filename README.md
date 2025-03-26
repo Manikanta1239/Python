@@ -5,13 +5,14 @@
 ## 📚 Contents
 - [🎯 Overview](#-overview)
 - [🚀 Quick Start](#-quick-start)
-- [📖 Documentation](#-documentation)
+- [📚 Documentation](#-documentation)
 - [🛠️ Prerequisites](#-prerequisites)
 - [🔧 Setup & Configuration](#-setup--configuration)
 - [🤝 Contributing](#-contributing)
-- [📋 Code Standards](#-code-standards)
+- [🗉 Code Standards](#-code-standards)
 - [🔒 Security](#-security)
 - [📝 License](#-license)
+- [⚙️ Optional Enterprise Features](#-optional-enterprise-features)
 
 ---
 
@@ -25,14 +26,14 @@ This comprehensive guide provides enterprise-level Python development practices,
 
 ## 🚀 Quick Start
 
-### 1️⃣ Repository Setup
+### 1⃣ Repository Setup
 ```bash
 git clone <repository-url>
 cd Python
 git checkout -b feature/your-feature-name
 ```
 
-### 2️⃣ Environment Configuration
+### 2⃣ Environment Configuration
 ```bash
 python -m venv .venv
 .venv\Scripts\activate     # Windows
@@ -43,7 +44,7 @@ python -m pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Development Setup
+### 3⃣ Development Setup
 ```bash
 pre-commit install  # Install git hooks
 pip install -r requirements-dev.txt  # Install development dependencies
@@ -51,7 +52,7 @@ pip install -r requirements-dev.txt  # Install development dependencies
 
 ---
 
-## 📖 Documentation
+## 📚 Documentation
 
 ### 📚 Core Guides
 - 📘 [**GitHub Workflow Guide**](Repository-on-GitHub.md)
@@ -118,7 +119,7 @@ pytest
 
 ---
 
-## 📋 Code Standards
+## 🗉 Code Standards
 - Follow [PEP 8](https://pep8.org/) style guide
 - Use type hints (PEP 484)
 - Maintain 100% test coverage
@@ -135,6 +136,73 @@ pytest
 
 ## 📝 License
 Licensed under MIT - See [LICENSE](LICENSE)
+
+---
+
+## ⚙️ Optional Enterprise Features
+
+### 🛠️ Docker Support
+```bash
+# Build Docker image
+docker build -t python-app .
+
+# Run container
+docker run -d -p 5000:5000 python-app
+```
+- Include a `Dockerfile` and `.dockerignore` for containerization.
+
+### 📊 Logging Best Practices
+```python
+import logging
+from loguru import logger
+
+logger.add("app.log", rotation="1 MB", level="INFO")
+logger.info("Application started")
+```
+- Use `loguru` for structured logging.
+- Configure logging rotation and level handling.
+
+### ⏳ Performance Monitoring
+```bash
+pip install py-spy
+py-spy top -- python main.py
+```
+- Utilize `cProfile`, `py-spy`, and `scalene` for performance profiling.
+
+### 🛠️ API Development Guidelines
+- **FastAPI** for modern web APIs.
+- **Django/Flask** for scalable backend applications.
+- Implement **Swagger/OpenAPI** documentation.
+- Secure APIs with OAuth 2.0 or JWT.
+
+### 🌐 Infrastructure as Code (IaC)
+```bash
+terraform init  
+terraform apply  
+```
+- Use **Terraform** or **Ansible** for infrastructure automation.
+
+### 📂 Database Best Practices
+- Use **SQLAlchemy** for ORM.
+- Implement **Alembic** for migrations.
+- Secure database connections with `.env` and `secrets`.
+
+### ⚖️ Feature Flags & A/B Testing
+```python
+from flipper import FeatureFlag  
+flag = FeatureFlag("new_ui")  
+if flag.is_enabled():  
+    render_new_ui()
+```
+- Use **LaunchDarkly** or **Flipper** for controlled rollouts.
+
+### 🚀 Event-Driven Architecture
+```python
+from kafka import KafkaProducer  
+producer = KafkaProducer(bootstrap_servers='localhost:9092')  
+producer.send('events', b'New Event')  
+```
+- Implement **Kafka** or **RabbitMQ** for scalable event processing.
 
 ---
 
